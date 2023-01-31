@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { useState, setState } from "react";
+import { useState } from "react";
 import TypingComponent from "./TypingComponent";
+import React from "react";
 
 function App() {
   const [message, setMessage] = useState("");
-  const handleMessageChange = (event) => {
+  const handleMessageChange = (event: any) => {
     setMessage(event.target.value);
   };
 
@@ -20,7 +19,8 @@ function App() {
       <button onChange={handleMessageChange}></button>
 
       <br />
-      <TypingComponent message={message} />
+      {message}
+      <TypingComponent data-message={message} />
     </div>
   );
 }
